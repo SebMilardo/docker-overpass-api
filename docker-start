@@ -3,3 +3,4 @@
 service fcgiwrap start
 service overpass start
 service nginx start
+tail -f /var/log/nginx/error.log

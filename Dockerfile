@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 MAINTAINER Sebastiano Milardo <milardo@mit.edu>
 
@@ -51,7 +51,6 @@ RUN /srv/osm3s/bin/init_osm3s.sh "$PLANET_FILE" "$DB_DIR" "$EXEC_DIR" \
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY overpass /etc/init.d
 COPY docker-start /usr/local/sbin
-
 
 CMD ["/usr/local/sbin/docker-start"]
 
