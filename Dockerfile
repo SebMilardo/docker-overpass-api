@@ -38,7 +38,10 @@ RUN pip3 install -r requirements.txt
 
 COPY bbox.csv bbox.csv
 COPY download_osm_data.py download_osm_data.py
-RUN python3 download_osm_data.py
+
+RUN echo "Version: 1.0.1"
+
+RUN python3 -u download_osm_data.py
 
 RUN gunzip planet.osm.gz
 RUN bzip2 planet.osm

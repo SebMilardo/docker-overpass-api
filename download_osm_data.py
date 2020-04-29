@@ -19,6 +19,7 @@ request_id
 print("Requesting map {}...".format(request_id))
 url = "https://extract.bbbike.org/?lang=en&format={}&city={}&email=fje86316%40aklqo.com&as=0.1&coords={}&oi=1&layers=B000T&submit=extrakt&expire={}&ref=download"
 url = url.format("osm.gz",request_id,coords,round(time.time(),0)+3600)
+print(url)
 response = requests.get(url)
 
 if response.ok:
@@ -27,7 +28,7 @@ if response.ok:
     tries = 0
     while not_found and tries < max_tries:
         tries += 1
-        url = "https://download.bbbike.org/osm/extract/"
+        url = "https://download.bbbike.org/osm/extract/?date=all"
         response = requests.get(url)
         link = None
         if response.ok:
